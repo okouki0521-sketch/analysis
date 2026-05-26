@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+export const dynamic = 'force-dynamic';
 
 export default function ConnectInstagramPage() {
   const appId = process.env.INSTAGRAM_APP_ID;
