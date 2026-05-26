@@ -55,3 +55,17 @@ export async function GET(request: Request) {
 
       if (igData.instagram_business_account) {
         igAccountId = igData.instagram_business_account.id
+        break
+      }
+    }
+
+    if (!igAccountId) {
+      return NextResponse.json({ status: "Instagramアカウントが紐付いていません", detail: debugInfo })
+    }
+
+    return NextResponse.json({ status: "大成功！！", instagramId: igAccountId })
+
+  } catch (error: any) {
+    return NextResponse.json({ status: "予期せぬエラー", detail: error.message })
+  }
+}
