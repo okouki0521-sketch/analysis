@@ -6,7 +6,8 @@ export default function ConnectInstagramPage() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const redirectUri = `${baseUrl}/api/instagram/callback`;
   // Standard scopes for IG Graph API
-  const scopes = 'instagram_basic,instagram_manage_insights,pages_show_list,pages_read_engagement';
+    const oauthUrl = `https://www.facebook.com/v19.0/dialog/oauth?client_id=${appId}&display=page&redirect_uri=${redirectUri}&response_type=code&scope=${scopes}&auth_type=rerequest`;
+
   const oauthUrl = `https://www.facebook.com/v19.0/dialog/oauth?client_id=${appId}&display=page&redirect_uri=${redirectUri}&response_type=code&scope=${scopes}`;
 
   return (
